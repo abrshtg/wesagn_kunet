@@ -7,7 +7,7 @@ class Birth(models.Model):
     middle_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     gender = models.CharField(max_length=29, choices=GENDER)
-    photo = models.ImageField(upload_to='media/birth')
+    photo = models.ImageField(upload_to='birth')
     birth_date = models.DateField()
     birth_place = models.CharField(max_length=250)
     nationality = models.CharField(max_length=100, default='Ethiopian')
@@ -46,7 +46,7 @@ class Marriage(models.Model):
     husband_last_name = models.CharField(max_length=100)
     husband_birth_date = models.DateField()
     husband_nationality = models.CharField(max_length=100, default='Ethiopian')
-    husband_photo = models.ImageField(upload_to='media/marriage')
+    husband_photo = models.ImageField(upload_to='marriage')
 
     wife_first_name = models.CharField(max_length=100)
     wife_middle_name = models.CharField(max_length=100)
