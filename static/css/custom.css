@@ -1,0 +1,25 @@
+section {
+
+    padding: 10px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#footer {
+    background: #264653 !important;
+}
+
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+}
+
+
+
+
+
+
+
+
+
