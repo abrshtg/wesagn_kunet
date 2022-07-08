@@ -32,6 +32,7 @@ class Death(models.Model):
     nationality = models.CharField(max_length=100, default='Ethiopian')
     death_date = models.DateField()
     death_place = models.CharField(max_length=250)
+    death_reason = models.TextField()
     death_registry_date = models.DateField(auto_now_add=True)
     certificate_given_date = models.DateField(default=timezone.now)
     civil_registrar_fullname = models.CharField(max_length=250)
@@ -90,6 +91,7 @@ class Divorce(models.Model):
     
     divorce_date = models.DateField()
     divorce_place = models.CharField(max_length=250)
+    divorce_reason = models.TextField()
     divorce_registry_date = models.DateField(auto_now_add=True)
     certificate_given_date = models.DateField(default=timezone.now)
     civil_registrar_fullname = models.CharField(max_length=250)
