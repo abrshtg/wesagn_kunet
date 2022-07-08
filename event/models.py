@@ -2,6 +2,7 @@ from django.utils import timezone
 from django.db import models
 GENDER = [('M', 'male'), ('F', 'female')]
 
+
 class Birth(models.Model):
     first_name = models.CharField(max_length=100)
     middle_name = models.CharField(max_length=100)
@@ -18,6 +19,9 @@ class Birth(models.Model):
     birth_registry_date = models.DateField(auto_now_add=True)
     certificate_given_date = models.DateField(default=timezone.now)
     civil_registrar_fullname = models.CharField(max_length=250)
+
+    class Meta:
+        ordering = ['first_name']
 
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name}'
@@ -37,6 +41,9 @@ class Death(models.Model):
     certificate_given_date = models.DateField(default=timezone.now)
     civil_registrar_fullname = models.CharField(max_length=250)
 
+    class Meta:
+        ordering = ['first_name']
+
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name}'
 
@@ -55,7 +62,7 @@ class Marriage(models.Model):
     wife_birth_date = models.DateField()
     wife_nationality = models.CharField(max_length=100, default='Ethiopian')
     wife_photo = models.ImageField(upload_to='media/marriage')
-    
+
     marriage_date = models.DateField()
     marriage_registry_date = models.DateField(auto_now_add=True)
     marriage_region = models.CharField(max_length=100)
@@ -66,10 +73,11 @@ class Marriage(models.Model):
     certificate_given_date = models.DateField(default=timezone.now)
     civil_registrar_fullname = models.CharField(max_length=250)
 
-    
+    class Meta:
+        ordering = ['husband_first_name', 'wife_first_name']
+
     def __str__(self) -> str:
         return f'Mr. {self.husband_first_name} & Ms. {self.wife_first_name}'
-
 
 
 class Divorce(models.Model):
@@ -88,7 +96,7 @@ class Divorce(models.Model):
     wife_nationality = models.CharField(max_length=100, default='Ethiopian')
     wife_birth_place = models.CharField(max_length=100)
     wife_birth_zone = models.CharField(max_length=100)
-    
+
     divorce_date = models.DateField()
     divorce_place = models.CharField(max_length=250)
     divorce_reason = models.TextField()
@@ -96,7 +104,8 @@ class Divorce(models.Model):
     certificate_given_date = models.DateField(default=timezone.now)
     civil_registrar_fullname = models.CharField(max_length=250)
 
-    
+    class Meta:
+        ordering = ['husband_first_name', 'wife_first_name']
+
     def __str__(self) -> str:
         return f'Mr. {self.husband_first_name} & Ms. {self.wife_first_name}'
-
