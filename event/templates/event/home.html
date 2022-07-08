@@ -3,7 +3,17 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-<h1>welcome to Adama City web based civil and vital registration system</h1>
 
-
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    {% for birth in births %}
+    <div class="col">
+      <div class="card h-100">
+        <img src={{ birth.photo.url }} class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text text-center">{{ birth.first_name }} {{ birth.last_name }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %} 
+  </div>
 {% endblock %}

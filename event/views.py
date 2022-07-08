@@ -24,4 +24,4 @@ def marriage(request):
 
 def divorce(request):
     queryset = Divorce.objects.all()
-    return render(request, 'event/divorce.html', {'divores': queryset})
+    return render(request, 'event/divorce.html', {'divorces': queryset})
