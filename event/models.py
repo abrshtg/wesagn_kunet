@@ -32,6 +32,7 @@ class Death(models.Model):
     middle_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     gender = models.CharField(max_length=29, choices=GENDER)
+    photo = models.ImageField(upload_to='death')
     birth_date = models.DateField()
     nationality = models.CharField(max_length=100, default='Ethiopian')
     death_date = models.DateField()
@@ -88,6 +89,7 @@ class Divorce(models.Model):
     husband_nationality = models.CharField(max_length=100, default='Ethiopian')
     husband_birth_place = models.CharField(max_length=100)
     husband_birth_zone = models.CharField(max_length=100)
+    husband_photo = models.ImageField(upload_to='marriage')
 
     wife_first_name = models.CharField(max_length=100)
     wife_middle_name = models.CharField(max_length=100)
@@ -96,6 +98,7 @@ class Divorce(models.Model):
     wife_nationality = models.CharField(max_length=100, default='Ethiopian')
     wife_birth_place = models.CharField(max_length=100)
     wife_birth_zone = models.CharField(max_length=100)
+    wife_photo = models.ImageField(upload_to='marriage')
 
     divorce_date = models.DateField()
     divorce_place = models.CharField(max_length=250)

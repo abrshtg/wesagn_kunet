@@ -13,12 +13,15 @@ def birth(request):
 
 
 def death(request):
-    return render(request, 'event/death.html')
+    queryset = Death.objects.all()
+    return render(request, 'event/death.html', {'deaths': queryset})
 
 
 def marriage(request):
-    return render(request, 'event/marriage.html')
+    queryset = Marriage.objects.all()
+    return render(request, 'event/marriage.html', {'marriages': queryset})
 
 
 def divorce(request):
-    return render(request, 'event/divorce.html')
+    queryset = Divorce.objects.all()
+    return render(request, 'event/divorce.html', {'divores': queryset})
