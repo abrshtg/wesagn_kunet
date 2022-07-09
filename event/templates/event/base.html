@@ -10,32 +10,46 @@
     <link rel="stylesheet" href={% static "css/custom.css"%}>
 </head>
 <body style="background-color: #E4DCCF">
-  <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #264653;">
+  <nav class="navbar navbar-expand-lg navbar-dark nav" style="background-color: #264653;">
     <div class="container">
       <a class="navbar-brand" href={% url 'home' %}> <img src={% static 'images/ethiopia.png' %} alt="Home" width="40px"> </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav nav-tabs">
           <li class="nav-item">
             <a class="nav-link" href={% url 'birth' %}>Birth</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mx-4">
             <a class="nav-link" href={% url 'death' %}>Death</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href={% url 'marriage' %}>Marriage</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href={% url 'divorce' %}>Divorce</a>
+            <a class="nav-link mx-4" href={% url 'divorce' %}>Divorce</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Admin</a>
+          </li>
+          {% if request.user.is_authenticated %}
+          <li class="nav-item ms-4">
+            <a class="nav-link" href={% url 'logout' %}>Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item ms-4">
+            <a class="nav-link" href={% url 'login' %}>Login</a>
+          </li>
+          {% endif %}
         </ul>
       </div>
     </div>
   </nav>
 
-<div class="container my-5">
+
+<div class="container my-4">
+ 
     {% block body %}
     {% endblock %}
 </div>
