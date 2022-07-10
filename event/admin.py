@@ -9,7 +9,7 @@ admin.site.index_title = "Admin"
 
 @admin.register(Birth)
 class BirthAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'middle_name', 'last_name']
+    list_display = ['first_name', 'middle_name', 'last_name', 'gender', 'birth_date', 'birth_place', 'birth_registry_date', 'certificate_given_date']
 
 
 @admin.register(Death)
