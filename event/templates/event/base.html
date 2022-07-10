@@ -64,8 +64,11 @@
 				<div class="col-xs-12 col-sm-12 col-md-12  text-center text-white">
           <p>Adama City web based civil and vital registration system</p>
 					<h6>© All right Reversed.</h6>
+          {% now "Y" as current_year %}
+          {% block translate %}
+          <p class="small">Copyright - {{ current_year }}</p>
+          {% endblock translate %}
 				</div>
-				<hr>
 			</div>	
 		</div>
 	</section>
