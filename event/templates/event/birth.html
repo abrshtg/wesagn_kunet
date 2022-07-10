@@ -7,14 +7,16 @@
 {% block body %}
   <div class="row row-cols-1 row-cols-md-4 g-4">
     {% for birth in births %}
-    <div class="col">
-      <div class="card h-100">
-        <img src={{ birth.photo.url }} class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text text-center">{{ birth.first_name }} {{ birth.last_name }}</p>
+    <a href="/birth/{{ birth.id }}">
+      <div class="col">
+        <div class="card h-100">
+          <img src={{ birth.photo.url }} class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text text-center">{{ birth.first_name }} {{ birth.last_name }}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
     {% endfor %} 
   </div>
 {% endblock %}

@@ -1,0 +1,47 @@
+{% extends './base.html' %} 
+
+{% block title %} Birth {% endblock title %}
+
+{% block body %}
+<style>
+    #footer {
+        position: absolute;
+        bottom: 0;
+    }
+    
+</style>
+<div class="card">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src={{ birth.photo.url }} class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <table class="table table-success table-striped mt-5">
+                    <thead>
+                      <tr class="">
+                        
+                        <th class="py-3" scope="col">Name</th>
+                        <th class="py-3" scope="col">Birth Date</th>
+                        <th class="py-3" scope="col">Birth Place</th>
+                        <th class="py-3" scope="col">Birth Registry</th>
+                        <th class="py-3" scope="col">Certificate Given</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                      <tr class="">
+                        <td class="py-3">{{ birth.first_name }} {{ birth.last_name }} {{ birth.last_name }}</td>
+                        <td class="py-3">{{ birth.birth_date }}</td>
+                        <td class="py-3">{{ birth.birth_place }}</td>
+                        <td class="py-3">{{ birth.birth_registry_date }}</td>
+                        <td class="py-3">{{ birth.certificate_given_date }}</td>
+                      </tr>
+                    </tbody>
+                  </table>            
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

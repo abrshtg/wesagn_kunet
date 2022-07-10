@@ -1,0 +1,86 @@
+{% extends './base.html' %} 
+
+{% block title %} Birth {% endblock title %}
+
+{% block body %}
+
+<div class="card">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src={{ marriage.husband_photo.url }} class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <table class="table table-success table-striped mt-5">
+                    <thead>
+                      <tr class="">
+                        
+                        <th class="py-3" scope="col">Name</th>
+                        <th class="py-3" scope="col">Birth Date</th>
+                        <th class="py-3" scope="col">Nationality</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                      <tr class="">
+                        <td class="py-3">{{ marriage.husband_first_name }} {{ marriage.husband_middle_name }} {{ marriage.husband_last_name }}</td>
+                        <td class="py-3">{{ marriage.husband_birth_date }}</td>
+                        <td class="py-3">{{ marriage.husband_nationality }}</td>
+                      </tr>
+                    </tbody>
+                  </table>            
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src={{ marriage.wife_photo.url }} class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <table class="table table-success table-striped mt-5">
+                    <thead>
+                      <tr class="">
+                        
+                        <th class="py-3" scope="col">Name</th>
+                        <th class="py-3" scope="col">Birth Date</th>
+                        <th class="py-3" scope="col">Nationality</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                      <tr class="">
+                        <td class="py-3">{{ marriage.wife_first_name }} {{ marriage.wife_middle_name }} {{ marriage.wife_last_name }}</td>
+                        <td class="py-3">{{ marriage.wife_birth_date }}</td>
+                        <td class="py-3">{{ marriage.wife_nationality }}</td>
+                      </tr>
+                    </tbody>
+                  </table>            
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table table-success table-striped mt-5">
+    <thead>
+      <tr class="">
+        
+        <th class="py-3" scope="col">Marriage Date</th>
+        <th class="py-3" scope="col">Marriage Place</th>
+        <th class="py-3" scope="col">Marriage Registry</th>
+        <th class="py-3" scope="col">Certificate Given</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr class="">
+        <td class="py-3">{{ marriage.marriage_date }}</td>
+        <td class="py-3">{{ marriage.marriage_city }}</td>
+        <td class="py-3">{{ marriage.marriage_registry_date }}</td>
+        <td class="py-3">{{ marriage.certificate_given_date }}</td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock body %}
