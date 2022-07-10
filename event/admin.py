@@ -19,9 +19,9 @@ class DeathAdmin(admin.ModelAdmin):
 
 @admin.register(Divorce)
 class DivorceAdmin(admin.ModelAdmin):
-    list_display = ['husband_first_name', 'husband_middle_name', 'wife_first_name', 'wife_middle_name', 'divorce_date', 'divorce_reason', 'divorce_registry_date', 'certificate_given_date']
+    list_display = ['husband_first_name', 'husband_middle_name', 'wife_first_name', 'wife_middle_name', 'divorce_date', 'divorce_registry_date', 'certificate_given_date']
     search_fields = ['husband_first_name', 'wife_first_name']
-    
+
 @admin.register(Marriage)
 class MarriageAdmin(admin.ModelAdmin):
     list_display = ['husband_first_name', 'husband_middle_name', 'wife_first_name', 'wife_middle_name', 'marriage_date', 'marriage_city', 'marriage_registry_date', 'certificate_given_date']
